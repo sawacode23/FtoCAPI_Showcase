@@ -22,9 +22,18 @@ This API allows the conversion of temperature values between Celsius and Fahrenh
 
 2. **Create and activate a virtual environment**:
 
+   Using venv:
+
    ```bash
    python3 -m venv venv
    source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+   ```
+
+   Using conda:
+
+   ```bash
+   conda create --name FtoCAPI python=3.12
+   conda activate FtoCAPI
    ```
 
 3. **Install the dependencies**:
