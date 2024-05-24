@@ -1,6 +1,7 @@
-from fastapi import FastAPI, Body, HTTPException
-from pydantic import BaseModel
 from enum import Enum
+
+from fastapi import Body, FastAPI, HTTPException
+from pydantic import BaseModel
 
 app = FastAPI()
 
