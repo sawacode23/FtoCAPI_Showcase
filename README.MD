@@ -8,6 +8,8 @@ This API allows the conversion of temperature values between Celsius and Fahrenh
 
 - Convert temperature from Celsius to Fahrenheit.
 - Convert temperature from Fahrenheit to Celsius.
+- Includes unit tests to ensure the correctness of the conversion logic.
+- Utilizes GitHub Actions for continuous integration, running tests on each push and pull request.
 
 ## Installation
 
@@ -35,7 +37,7 @@ This API allows the conversion of temperature values between Celsius and Fahrenh
 1. **Start the FastAPI server**:
 
    ```bash
-   uvicorn main:app --reload
+   uvicorn app:app --reload
    ```
 
 2. **Accessing the API documentation**:
@@ -75,7 +77,19 @@ Example:
 
 **Errors**:
 
-- `400 Bad Request`: Invalid units supplied.
+- `422 Unprocessable Entity`: Invalid units supplied.
+
+## Running Tests
+
+To run the unit tests, use the following command:
+
+```bash
+pytest tests/
+```
+
+## Continuous Integration
+
+This project uses GitHub Actions for continuous integration. On each push and pull request to the `main` branch, the tests in the `tests/` folder are automatically run. If any test fails, the push or pull request is blocked until the tests pass successfully.
 
 ## Conversion Logic
 
