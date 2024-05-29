@@ -26,4 +26,15 @@ jobs:
 
       - name: Run tests
         run: |
-          pytest tests/ || exit 1
+          pytest tests/
+
+      - name: Check test result
+        if: failure()
+        run: |
+          echo "Tests failed. Rejecting the commit."
+          exit 1
+
+      - name: Tests passed
+        if: success()
+        run: |
+          echo "Tests passed. Accepting the commit."
