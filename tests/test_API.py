@@ -14,7 +14,7 @@ def test_convert_celsius_to_fahrenheit():
     """
     response = client.post("/convert/", json={"units": "c", "value": 0})
     assert response.status_code == 200
-    assert response.json() == {"units": "fahrenheit", "value": 32}
+    assert response.json() == {"units": "f", "value": 32}
 
 
 def test_convert_fahrenheit_to_celsius():
@@ -26,7 +26,7 @@ def test_convert_fahrenheit_to_celsius():
     """
     response = client.post("/convert/", json={"units": "f", "value": 32})
     assert response.status_code == 200
-    assert response.json() == {"units": "celsius", "value": 0}
+    assert response.json() == {"units": "c", "value": 0}
 
 
 def test_invalid_units():
