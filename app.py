@@ -95,9 +95,9 @@ def convert(request: ConvertRequest = Body(...)):
     input_units = request.units
     if input_units == UnitsEnum.celsius:
         fahrenheit = celsius_to_fahrenheit(request.value)
-        return {"units": "fahrenheit", "value": fahrenheit}
+        return {"units": "f", "value": fahrenheit}
     elif input_units == UnitsEnum.fahrenheit:
         celsius = fahrenheit_to_celsius(request.value)
-        return {"units": "celsius", "value": celsius}
+        return {"units": "c", "value": celsius}
     else:
         raise HTTPException(status_code=400, detail="Invalid units supplied")
